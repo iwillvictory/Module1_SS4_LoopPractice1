@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5</title>
+</head>
+<body>
+<p>20 first of Fibonacci: <span id="output"></span> </p>
+<br>
+Sum = <span id="sum"></span>
+<script>
+    //Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+    function fibonacci(arr,n1,n2,number){
+        if(number>2){
+            arr[arr.length] = n1 + n2;
+            n1 = n2;
+            n2 = arr[arr.length-1];
+            fibonacci(arr,n1,n2,number-1);
+        }
+    }
+    function print20Fibonacci(){
+        let number= 20;
+        document.fibo= [];
+        if(!isNaN(number) && number>=2){
+            document.fibo[0]=0;
+            document.fibo[1]=1;
+            fibonacci(document.fibo,0,1,number);
+            document.getElementById("output").innerHTML= document.fibo.toString();
+        }
+    }
+    function printSum20InFibonacci(){
+        let sum= document.fibo.reduce(function(total,value) {
+            return total+=value;
+        },0);
+        document.getElementById("sum").innerHTML= sum.toString();
+    }
+
+    // Call Functions
+    print20Fibonacci();
+    printSum20InFibonacci();
+</script>
+
+</body>
+</html>

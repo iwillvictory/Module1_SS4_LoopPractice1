@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num" value=""> <button onclick="printFibonacciBy5()" > N Fibonancci By 5  </button>
+<br>
+Kết Quả : <span id="ketqua"></span>
+<script>
+   // Bài 4: Tìm số N số đầu tiên trong dãy fibonacci chia hết cho 5.
+   function fibonacci(arr,n1,n2,number){
+       if(arr.length < number){
+           let n3 = n1 + n2;
+           n1 = n2;
+           n2 = n3;
+           if(n3%5==0){
+               arr[arr.length]=n3;
+           }
+           fibonacci(arr,n1,n2,number);
+       }
+   }
+
+   function printFibonacciBy5(){
+       let number= parseInt(document.getElementById("num").value);
+       let arr=[];
+       if(!isNaN(number) && number>=2){
+           fibonacci(arr,0, 1,number);
+           document.getElementById("ketqua").innerHTML= arr.toString();
+       }
+   }
+</script>
+</body>
+</html>

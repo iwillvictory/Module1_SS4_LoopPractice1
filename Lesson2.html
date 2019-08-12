@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tăng Giảm Nhiệt Độ</title>
+</head>
+<body>
+<script>
+   /* Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.
+        Nếu nhiệt độ nhập vào trên 100,  yêu cầu người dùng giảm nhiệt độ.
+        Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    */
+    let temperature=NaN;
+    let message="Hãy Nhập Vào Nhiệt Độ";
+    do{
+        if(isNaN(temperature)){
+            temperature=parseInt(prompt(message,""));
+        }else if(temperature > 100){
+            message="Hãy giảm nhiệt độ:";
+            temperature=parseInt(prompt(message,""));
+        }else if(temperature <20 ){
+            message="Hãy Tăng Nhiệt Độ: "
+            temperature=parseInt(prompt(message,""));
+        }
+    }while(isNaN(temperature) || temperature <20 || temperature >100);
+    alert("Nhiệt độ hợp lý");
+
+
+</script>
+</body>
+</html>
